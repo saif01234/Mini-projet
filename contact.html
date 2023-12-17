@@ -4,10 +4,126 @@
     <meta charset="UTF-8">
     <title>Mon Portfolio</title>
     <link rel="stylesheet" href="contact.css">
+	<script type="text/javascript" src="contact.js"></script>
+
+	<style>
+        /* Add any additional styling for the form if needed */
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden; /* Prevent horizontal scrollbar */
+            background-color: #f7f7f7; /* Background color for the body */
+        }
+
+        /* Set up layout for the main sections */
+        header,
+        nav,
+        section,
+        footer {
+            text-align: center;
+            margin: 0 auto;
+            max-width: 800px; /* Adjust the max-width as needed */
+        }
+
+        header {
+            background-color: #1a1a1a;
+            color: #fff;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 10px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            margin-top: 10px;
+            border-radius: 8px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 16px;
+            transition: color 0.3s ease-in-out;
+        }
+
+        nav a:hover {
+            color: #88c7ff;
+        }
+
+        section {
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        footer {
+            background-color: #1a1a1a;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+            position: relative;
+            z-index: 2;
+        }
+        /* Add any additional styling for the form if needed */
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 18px;
+            color: #333;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 18px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        /* Add a style for displaying validation messages */
+        .validation-message {
+            color: red;
+            margin-top: 10px;
+            font-size: 16px;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1 id="style_gris">Contact</h1>
+        <h1 >Contact</h1>
         <nav>
             <ul>
                 <li><a href="index.html">Accueil</a></li>
@@ -19,33 +135,38 @@
     </header>
 	<section >
 		<h2><b>Contact Me</b></h2>
-			<div>
-				<img src="C:\Users\Saif\Desktop\mini projet\contact.png" >
-			</div>
 			<p>N'hésitez pas à me contacter pour toute question ou opportunité professionnelle.</p>
-			<table align="center">
-				<tr>
-					<th>
-						<label>Nom :</label>
-						<input type="text" id="nom" name="nom" required>
-					</th>	
-					<th>
-						<label>Email :</label>
-						<input type="email" id="email" name="email" required>
-					</th>
-				</tr>
-			</table>
-			<table align="center">
-				<tr>
-					<th>
-						<label>Message :</label>
-						<textarea name="message" required></textarea><br>
-						<blockquote>
-							<input type="submit" value="Envoyer">
-						</blockquote>
-					</th>
-				</tr>
-			</table>
+</br>
+  <table align ="center">
+      <tr>
+        <td><label for="name">Nom:</label></td>
+        <td><input type="text" id="name" name="name" required></td>
+      </tr>
+      <tr>
+        <td><label for="surname">Prenom:</label></td>
+        <td><input type="text" id="surname" name="surname" required></td>
+      </tr>
+      <tr>
+        <td><label for="cin">CIN:</label></td>
+        <td><input type="text" id="cin" name="cin" required></td>
+      </tr>
+      <tr>
+        <td><label for="email">Email:</label></td>
+        <td><input type="email" id="email" name="email" required></td>
+      </tr>
+      <tr>
+        <td><label for="message">Message:</label></td>
+        <td><textarea id="message" name="message" rows="4" required></textarea></td>
+      </tr>
+	  <tr>
+        <td colspan=6><button onclick="validateForm()" type="submit">Envoyer Message</button></td>
+		
+      </tr>
+  </table>
+  <div id="validationMessage" class="validation-message"></div>
+
+	</br>
+	<img src="C:\Users\Saif\Desktop\mini projet\contact.png" >
 	</section>
 	<footer>
 		<p>&copy; 2023 All Rights reserved</p>
